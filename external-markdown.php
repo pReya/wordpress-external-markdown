@@ -2,9 +2,12 @@
 
 /**
  * Plugin Name: External Markdown
- * Author: Moritz Stueckler
+ * Author:      Moritz Stueckler
  * Description: Include and parse markdown files from external web sources like GitHub, GitLab, etc.
- * Version: 0.1
+ * Plugin URI:  https://github.com/pReya/wordpress-external-markdown
+ * Version:     0.0.1
+ * License:     GPL v2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 function external_markdown_shortcode($atts = array())
@@ -26,6 +29,7 @@ function external_markdown_shortcode($atts = array())
     $cached = get_transient($cache_key);
   }
 
+  // Cache miss or cache disabled
   if (!(isset($cached)) || ($cached === false)) {
     $fetch_content = wp_remote_get($url);
     $content_response_body = wp_remote_retrieve_body($fetch_content);
@@ -60,6 +64,7 @@ function external_markdown_shortcode($atts = array())
 
     return $html_string;
   } else {
+    // Cache hit
     return $cached;
   }
 }
