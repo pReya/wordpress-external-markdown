@@ -1,3 +1,17 @@
+=== External Markdown ===
+Contributors: pReya
+Tags: markdown, github, gitlab
+Requires at least: 4.7
+Tested up to: 5.6
+Stable tag: 0.0.1
+Requires PHP: 7.0
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+This is a plugin for Wordpress to embed Markdown files from external web sources (e.g. GitHub, GitLab, etc) into WordPress content.
+
+== Description ==
+
 # External Markdown Wordpress Plugin
 
 This is a plugin for Wordpress to embed Markdown files from external web sources (e.g. GitHub, GitLab, etc) into WordPress content using the shortcode `[external_markdown]`. A possible use case for this is to show content from a single source of truth (like a GitHub repository) on your WordPress website.
